@@ -1,0 +1,138 @@
+/* ===============================
+   HEADER CONTAINER
+=============================== */
+.header {
+  width: 100%;
+  background-color: #252522; /* dark neutral */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Dosis", sans-serif;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+/* ===============================
+   LOGO / HOME
+=============================== */
+.logo {
+  color: #fffbb1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ===============================
+   NAVIGATION
+=============================== */
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+/* Make the clickable area bigger */
+.nav-link {
+  display: block; /* block-level for hover */
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.nav-link, .dropdown-link {
+  color: #fffbb1; /* or your theme color */
+}
+
+
+/* ===============================
+   DROPDOWN
+=============================== */
+/* Dropdown container */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0; /* default */
+  background-color: #252522;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  min-width: 200px;       /* width of dropdown */
+  max-width: calc(100vw - 20px); /* never exceed viewport */
+  overflow: hidden;       /* cut off any overflow */
+  white-space: normal;    /* allow wrapping if needed */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 500;
+  /* prevent overflowing screen */
+  max-width: 90vw;       /* maximum width relative to viewport */
+  overflow-x: auto;      /* allow horizontal scroll if content is too wide */
+  white-space: nowrap;    /* keep items in a single line */
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-item.dropdown-right .dropdown {
+  left: auto;
+  right: 0;
+}
+
+/* Individual dropdown links inline */
+.dropdown-link {
+  display: inline-block;  /* horizontal scrolling */
+  padding: 0.5rem 1rem;
+  color: #fffbb1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #875626;
+  color: #fffbb1;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+  .nav-item {
+    width: 100%;
+  }
+  .dropdown {
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    width: 100%;
+  }
+}

@@ -1,0 +1,181 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+
+:root {
+  --color-wood: #875626;
+  --color-sand: #d19f72;
+  --color-charcoal: #252522;
+  --color-parchment: #fffbb1ff;
+
+  --color-background: #f4ecd8;
+  --color-accent: #6e3f1a;
+
+  --border-radius: 8px;
+  --transition-fast: 0.2s ease;
+}
+
+
+/* =========================
+   LOCAL FONTS
+========================= */
+
+@font-face {
+  font-family: "Dosis";
+  src: url("./assets/fonts/Dosis/Dosis-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Days One";
+  src: url("./assets/fonts/Days_One/DaysOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Dosis", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-charcoal);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1, h2, h3, h4 {
+  font-family: "Days One", sans-serif;
+  color: var(--color-wood);
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3rem;
+  border-bottom: 3px solid var(--color-sand);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+
+/* =========================
+   BODY TEXT
+========================= */
+
+p {
+  font-size: 1.05rem;
+  color: var(--color-charcoal);
+}
+
+.lore-text {
+  background-color: var(--color-parchment);
+  padding: 1.5rem;
+  border-left: 6px solid var(--color-wood);
+  border-radius: var(--border-radius);
+  font-style: italic;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: none;
+}
+
+.button-primary {
+  background-color: var(--color-wood);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background-color: var(--color-sand);
+  color: var(--color-charcoal);
+}
+
+.button-secondary:hover {
+  background-color: var(--color-wood);
+  color: white;
+}
+
+
+/* =========================
+   CARDS (for rides/games)
+========================= */
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+/* Hero section */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 500px; /* adjust as needed */
+  color: var(--color-parchment);
+  text-align: center;
+
+  /* Banner background */
+  background-image: url('/background-bricks.jpg');
+  background-size: cover;   /* cover entire section */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Optional dark overlay for text readability */
+  background-blend-mode: multiply;
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* =========================
+   SECTION WRAPPER
+========================= */
+
+.section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
